@@ -1,0 +1,81 @@
+import {createReadStream} from 'fs';
+/**
+ * Array doble de números: beneficio y peso
+ */
+export type Coleccion = [number, number];
+
+/**
+ * Clase Mochila
+ */
+export class Mochila {
+  /**
+   * Constructor de la clase Mochila
+   * @param capacidad Aguante máximo de la mochila
+   * @param numElementos Número de elemenos máximos que caben en la mochila
+   * @param elementos Beneficio y peso de corespondientes elemenos
+   */
+  constructor(protected capacidad: number,
+    protected numElementos: number,
+    protected elementos: Coleccion[]) {
+  } 
+  /**
+   * Setter de Capacidad
+   * @param c Número
+   */
+  setCapacidad(c: number) {
+    this.capacidad = c;
+    return this.capacidad;
+  }
+  /**
+   * Setter de nElemenos
+   * @param n Número
+   */
+  setNelemenos(n: number) {
+    this.numElementos = n;
+    return this.numElementos;
+  }
+  /**
+   * Setter de Elemenos
+   * @param e [Número, Número]
+   */
+  setElemenos(e: Coleccion[]) {
+    this.elementos = e;
+    return this.elementos;
+  }
+
+  /**
+   * Getter de Capacidad
+   * @returns capacidad
+   */
+  getCapacidad() {
+    return this.capacidad;
+  }
+  /**
+   * Getter de número de elemenos
+   * @returns nElementos
+   */
+  getNelemenos() {
+    return this.numElementos;
+  }
+  /**
+   * Getter de los elementos
+   * @returns elementos
+   */
+  getElemenos() {
+    return this.elementos;
+  }
+
+  leerCSV() {
+    let inputStream = createReadStream('CSVMochila.csv');
+    inputStream.on('data', (piece) => {
+      process.stdout.write(piece);
+    });
+  }
+
+  leerJSON() {
+    let inputStream = createReadStream('JSONMochila.json');
+    inputStream.on('data', (piece) => {
+      process.stdout.write(piece);
+    });
+  }
+}
