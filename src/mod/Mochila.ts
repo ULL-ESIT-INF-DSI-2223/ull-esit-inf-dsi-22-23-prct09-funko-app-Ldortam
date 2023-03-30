@@ -1,8 +1,16 @@
-import {createReadStream} from 'fs';
+import {readFile} from 'fs';
+
 /**
  * Array doble de números: beneficio y peso
  */
 export type Coleccion = [number, number];
+let text :string = '';
+/**
+ * Leer fichero;
+ */
+readFile(text, (_, data) => {
+  console.log(data);
+});
 
 /**
  * Clase Mochila
@@ -66,16 +74,16 @@ export class Mochila {
   }
 
   leerCSV() {
-    let inputStream = createReadStream('CSVMochila.csv');
-    inputStream.on('data', (piece) => {
-      process.stdout.write(piece);
+    text = 'CSVMochila.csv';
+    readFile(text, (_, data) => {
+      console.log(data);
     });
   }
 
   leerJSON() {
-    let inputStream = createReadStream('JSONMochila.json');
-    inputStream.on('data', (piece) => {
-      process.stdout.write(piece);
+    text = 'JSONMochila.json'
+    readFile(text, (_, data) => {
+      console.log(data);
     });
   }
 }

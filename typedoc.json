@@ -1,6 +1,6 @@
 {
     "entryPoints": [
-        
+        "./src/mod/Mochila.ts"
     ],
     "out": "./docs"
 }
