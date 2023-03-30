@@ -24,7 +24,4 @@ describe('Clase Mochila tests', () => {
     it('setElements', () => {
         expect(new Mochila(5, 1, [[4, 5]]).setElemenos([[1, 4],[2, 6]])).to.be.eql([[1, 4],[2, 6]])
     })
-    // it('CSV', () => {
-    //     expect(new Mochila(5, 1, [[4, 5]]).leerCSV).to.be.eql([[1, 4],[2, 6]])
-    // })
 })

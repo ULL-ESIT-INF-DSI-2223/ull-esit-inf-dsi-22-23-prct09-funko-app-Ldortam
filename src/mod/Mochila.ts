@@ -4,7 +4,7 @@ import {readFile} from 'fs';
  * Array doble de números: beneficio y peso
  */
 export type Coleccion = [number, number];
-let text :string = '';
+let text :string = 'CSVMochila.csv';
 /**
  * Leer fichero;
  */
@@ -73,17 +73,12 @@ export class Mochila {
     return this.elementos;
   }
 
-  leerCSV() {
-    text = 'CSVMochila.csv';
+  procesar() {
+    let datos: string
     readFile(text, (_, data) => {
-      console.log(data);
+      datos = data.toString();
     });
-  }
 
-  leerJSON() {
-    text = 'JSONMochila.json'
-    readFile(text, (_, data) => {
-      console.log(data);
-    });
+    
   }
 }
