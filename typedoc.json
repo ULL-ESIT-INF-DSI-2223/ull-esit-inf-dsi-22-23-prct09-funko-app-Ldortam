@@ -1,0 +1,9 @@
+{
+    "entryPoints": [
+        "./src/ejercicio1/Funko.ts",
+        "./src/ejercicio1/FunkoColeccion.ts",
+        "./src/mod/Mochila.ts"
+    ],
+    "out": "./docs",
+    
+}
